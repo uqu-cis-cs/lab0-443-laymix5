@@ -7,7 +7,7 @@ package edu.uqu.cs;
 /*
 * Make sure to complete and submit your lab
 */
-
+import java.util.Scanner;
 
 public class App{
 
@@ -15,7 +15,7 @@ public class App{
 * Complete method "twisters" definition below. The method prints all numbers from 1 to 110, 11 numbers per line. 
 * Also, it does the following:
 * - If the number is a multiple of 2, print "Tweetle"
-* - If the number is a multiple of 4, print "Beetle"
+* - If the number is a multiple of 4, print ""
 * - If the number is a multiple of 6, print "Poodle"
 * - Otherwise just print the number
 * 
@@ -43,16 +43,106 @@ public class App{
 *
 */
  
-    public static void main(String [] args) {
+   public static void main(String[] args) {
         
-
-        /* Write your code here */
      
-       //call method twisters()
-       //prompt user to enter a string 
-       //call method phoneKeypad(string)
-
+           twisters();
+           System.out.println("enter a string");
+           Scanner scan=new Scanner(System.in);
+           String word=scan.nextLine();
+           System.out.println(phoneKeypad(word));
+    }   
+          
+    
+    public static void twisters(){
+      
+   
+ 
+        // TODO code application logic here
+   
+    String[] words = {"", "Tweetle", "", "Beetle", "", "Poodle"};
+    for (int i = 1; i <= 110; i++) {
+        String output = "";
+        if (i % 2 == 0) {
+            output += words[1];
+        }
+        if (i % 4 == 0) {
+            output += words[3];
+        }
+        if (i % 6 == 0) {
+            output += words[5];
+        }
+        if (output.equals("")) {
+            output += i;
+        }
+        System.out.print(output + " ");
+        if (i % 11 == 0) {
+            System.out.println();
+        }
+    }
+}
+    
+    public static String phoneKeypad( String str ) {
+    String nums = "" ;
+    str =str.toUpperCase() ;
+    for ( int i = 0 ; i <= str.length() -1 ; i++ ) {
+        switch ( str.charAt(i) ) {
+            case 'A':
+            case 'B':
+            case'C' :
+            nums += 2 ;
+            break;
+            
+            case 'D' :
+            case'E' :
+            case'F' :
+            nums += 3 ;
+            break;
+            
+            case 'G' :
+            case  'H' : 
+            case 'I' : 
+            nums += 4 ;
+            break;
+            
+            case 'J' :
+            case'K' :
+            case'L' :
+            nums += 5 ;
+            break;
+            
+            case 'M' :
+            case 'N' :
+            case 'O' :
+            nums += 6 ;
+            break;
+            
+            case 'P' :
+            case 'Q' :
+            case 'R' : 
+            case 'S' :
+            nums += 7 ;
+            break;
+            
+            case 'T' :
+            case 'U' :
+            case 'V' :
+            nums += 8 ;
+            break;
+            case 'W' : 
+            case 'X' :
+            case 'Y' :
+            case 'Z' :
+            nums += 9 ;
+            break;
+            
+        }
+    }
+    
+    return nums ;
+    
+}
 
     }
 
-}
+    
